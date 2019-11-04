@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>{{title}}- ***Название блога***</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>{{title}}</h1></a>
+    <h5>{{text}}<br></h5>
+    <h3>Комментарии:<br></h3>
+    {% if comments|length ==0 %}
+    Нет комментариев
+    {% else %}
+    {% for i in comments %}
+    <p></p>
+    <h5>{{i.name}}<br></h5>
+    <h5>{{i.text}}<br></h5>
+    <p></p>
+    {% endfor %}
+    {% endif %}
+    <p></p>
+    <a class="btn btn-outline-primary" href="{{ url_for('create_entry_page') }}">Добавить новую статью</a>
+
+
+</body>
+</html>
